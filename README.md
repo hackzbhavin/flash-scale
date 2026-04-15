@@ -71,4 +71,8 @@ graph TD
 
     Queue -->|6. Consume Job| Worker
     Worker -->|7. Write Final Order| DB
-```    
+```
+
+---
+## ⚠️ Critical Weak Point
+* Redis is a Single Point of Failure (SPOF). The entire system — both the inventory counter and the BullMQ job queue — runs on Redis. If Redis goes down mid-sale, you lose both the lock mechanism and pending order jobs. A production-grade solution would require Redis Sentinel or Redis Cluster for high availability, and potentially a dead-letter queue strategy to recover unprocessed jobs. This is the #1 thing to address before calling this production-ready.
