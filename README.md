@@ -1,5 +1,8 @@
 ## High-Concurrency "Flash Sale" Engine**
 
+9001 React 
+9002 Nest 
+
 **Description**
 A high-throughput, distributed inventory system designed to handle massive, instantaneous spikes in web traffic (a "thundering herd") for limited-stock events like sneaker drops or concert ticket sales. The system reliably processes thousands of concurrent purchase requests, guarantees zero overselling through atomic in-memory operations, and processes finalized orders asynchronously to protect the primary database from crashing under load.
 
